@@ -1,0 +1,48 @@
+
+% datetime-fallback.sty
+% Fallback datetime macros with weekday and Julian day support, final version
+
+\ProvidesPackage{datetime-fallback}[2025/06/28 Final fallback datetime macros]
+
+\RequirePackage[english]{datetime2}
+\RequirePackage{datetime2-calc}
+
+% Date components
+\providecommand{\DTMcurrentyear}{\the\year}
+\providecommand{\DTMcurrentmonth}{\ifnum\month<10 0\fi\the\month}
+\providecommand{\DTMcurrentday}{\ifnum\day<10 0\fi\the\day}
+
+% Time components
+\providecommand{\DTMcurrenthour}{%
+  \ifnum\time<60 00\else
+    \ifnum\numexpr\time/60<10 0\fi
+    \number\numexpr\time/60\relax
+  \fi
+}
+
+\providecommand{\DTMcurrentminute}{%
+  \ifnum\time<60 \ifnum\time<10 0\fi\the\time\else
+    \ifnum\numexpr\time-\numexpr\time/60*60<10 0\fi
+    \number\numexpr\time-\numexpr\time/60*60\relax
+  \fi
+}
+
+% Time formats
+\providecommand{\DTMcurrenttime}{\DTMcurrenthour:\DTMcurrentminute}
+\providecommand{\DTMcurrenttimehhmm}{\DTMcurrenttime}
+
+% Day name lookup (English)
+\providecommand{\DTMdisplaydayname}[1]{%
+  \ifcase#1 Sunday\or Monday\or Tuesday\or Wednesday\or Thursday\or Friday\or Saturday\fi
+}
+
+% Weekday name
+\providecommand{\DTMcurrentweekday}{%
+  \DTMdisplaydayname{\DTMdayofweek{\year}{\month}{\day}}%
+}
+
+% Julian day (safe)
+\providecommand{\DTMcurrentjulian}{%
+  \DTMjulian{\year}{\month}{\day}%
+  \DTMdisplayjulianresult
+}

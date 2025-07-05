@@ -1,0 +1,8 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{compiledstamp}[2025/06/28 Insert compile timestamp from shell script]
+
+% Trigger the shell script to generate the timestamp
+% \immediate\write18{make-latex-stamp.sh}
+
+% Load the output safely
+\newcommand{\compiledstamp}{\textnormal{\input{build/stamp.tex}}}
