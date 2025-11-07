@@ -1,0 +1,29 @@
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.6.3)  29 JUN 2025 09:20
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**/Users/phil/texmf/tex/latex/local/compiledstamp.sty
+(/Users/phil/texmf/tex/latex/local/compiledstamp.sty
+LaTeX2e <2025-06-01>
+L3 programming layer <2025-05-26>
+
+LaTeX Warning: You have requested file `',
+               but the file provides `compiledstamp'.
+
+Package: compiledstamp 2025/06/28 Insert compile timestamp from shell script
+)
+! Emergency stop.
+<*> ...hil/texmf/tex/latex/local/compiledstamp.sty
+                                                  
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 18 strings out of 468533
+ 408 string characters out of 5447805
+ 417656 words of memory out of 5000000
+ 28481 multiletter control sequences out of 15000+600000
+ 626825 words of font info for 40 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 11i,0n,13p,146b,10s stack positions out of 10000i,1000n,20000p,1000000b,200000s
+No pages of output.
