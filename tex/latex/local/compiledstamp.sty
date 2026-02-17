@@ -1,8 +1,47 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{compiledstamp}[2025/06/28 Insert compile timestamp from shell script]
+\ProvidesPackage{compiledstamp}[2026/02/16 Compile timestamp helper]
 
-% Trigger the shell script to generate the timestamp
-% \immediate\write18{make-latex-stamp.sh}
+% ----------------------------
+% Options
+% ----------------------------
+% Default: show the stamp (draft mode)
+\newif\ifcompiledstamp@enabled
+\compiledstamp@enabledtrue
 
-% Load the output safely
-\newcommand{\compiledstamp}{\textnormal{\input{build/stamp.tex}}}
+% \usepackage[final]{compiledstamp}   -> disables output
+% \usepackage[draft]{compiledstamp}   -> enables output
+\DeclareOption{final}{\compiledstamp@enabledfalse}
+\DeclareOption{draft}{\compiledstamp@enabledtrue}
+\DeclareOption{nostamp}{\compiledstamp@enabledfalse}
+\ProcessOptions\relax
+
+% ----------------------------
+% Configuration
+% ----------------------------
+% Default file to input. Override after loading with:
+%   \compiledstampsetup{<path/to/stamp.tex>}
+\newcommand{\compiledstampfile}{build/stamp.tex}
+\newcommand{\compiledstampsetup}[1]{\renewcommand{\compiledstampfile}{#1}}
+
+% ----------------------------
+% Public command
+% ----------------------------
+% Prints the stamp if enabled and the file exists; otherwise prints nothing.
+% \newcommand{\compiledstamp}{%
+%   \ifcompiledstamp@enabled
+%     \IfFileExists{\compiledstampfile}{\textnormal{\input{\compiledstampfile}}}{}%
+%   \fi
+% }
+
+\newcommand{\compiledstamp}{%
+  \ifcompiledstamp@enabled
+    \IfFileExists{\compiledstampfile}{%
+      \begingroup
+        \input{\compiledstampfile}%
+        \ifdefined\compiledtime
+          \textnormal{\compiledtime}%
+        \fi
+      \endgroup
+    }{}%
+  \fi
+}
