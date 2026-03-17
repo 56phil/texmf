@@ -1,0 +1,61 @@
+/* kindle.css — base stylesheet for Pandoc → EPUB → KDP */
+
+body {
+    font-family: serif;
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Chapter titles */
+h1 {
+    font-size: 1.6em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 1.5em;
+    page-break-before: always;   /* each chapter starts on a new screen */
+}
+
+/* Section headings */
+h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 2em;
+    margin-bottom: 0.8em;
+}
+
+/* Body paragraphs */
+p {
+    margin: 0;
+    text-indent: 1.5em;
+    text-align: justify;
+}
+
+/* First paragraph after a heading — no indent */
+h1 + p, h2 + p {
+    text-indent: 0;
+}
+
+/* Block quotes (epigraphs, long quotes) */
+blockquote {
+    margin: 1.5em 2em;
+    font-style: italic;
+    text-indent: 0;
+}
+
+/* Epigraph attribution */
+blockquote + p.attribution {
+    text-align: right;
+    font-style: normal;
+    font-size: 0.9em;
+    margin-right: 2em;
+}
+
+/* Section breaks (three asterisks or a blank line in LaTeX) */
+p.section-break {
+    text-align: center;
+    text-indent: 0;
+    margin: 1.5em 0;
+}
