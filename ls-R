@@ -3,17 +3,18 @@
 .DS_Store
 .git
 .gitignore
-ls-R
 README.md
+WARP.md
+ls-R
 tex
 texmf.cnf
-WARP.md
 
 ./.git:
+.DS_Store
 COMMIT_EDITMSG
+HEAD
 config
 description
-HEAD
 hooks
 index
 info
@@ -60,43 +61,47 @@ HEAD
 main
 
 ./.git/objects:
-26
-4b
-55
-67
-75
-96
-d9
+14
+1d
+31
+40
+80
+b7
+c0
+ef
 info
 pack
 
-./.git/objects/26:
-b2a80879af8379c96f4cdf23f21eb0b4084d3e
+./.git/objects/14:
+7d38d396420880ff086639e22da6365a66c866
 
-./.git/objects/4b:
-9639d4caa2ca85338c8904513038db75943055
+./.git/objects/1d:
+00f9bc89820199390de0ff6e7b4017b5bbcc73
 
-./.git/objects/55:
-1bf5c781e6db8caebad509ad01724f20892cee
+./.git/objects/31:
+59a273a5c8c36b8603cac85c492f7e526182c7
 
-./.git/objects/67:
-7a290e1229d9cf7cd235d792b2873951a727c3
+./.git/objects/40:
+f90fc6965b1f7d2ddad69c84fb26c14c6aebdb
 
-./.git/objects/75:
-2574c4b56eb5ba0fab0877a670ada18e87118a
+./.git/objects/80:
+8a21a26fa0a88fc8f7e7ea7f5eb2fe8aec210c
 
-./.git/objects/96:
-323c978daa39665cfa32e49d05f6e874f39fc8
+./.git/objects/b7:
+4831d50b14389465490e30ef190d1367e6fb5d
 
-./.git/objects/d9:
-7b65875775b6a620fc343631b4fe222541a5a9
+./.git/objects/c0:
+ebb8a87f0527572288533cd609ec40179d4087
+
+./.git/objects/ef:
+ecd20bdd21de9b0b19adf1ff63a4f06a728c43
 
 ./.git/objects/info:
 
 ./.git/objects/pack:
-pack-8b7940073e688ee5143c9bba49ec8c7810835c3d.idx
-pack-8b7940073e688ee5143c9bba49ec8c7810835c3d.pack
-pack-8b7940073e688ee5143c9bba49ec8c7810835c3d.rev
+pack-d423c4eb314421c65ded803fb352ced7ff919a8b.idx
+pack-d423c4eb314421c65ded803fb352ced7ff919a8b.pack
+pack-d423c4eb314421c65ded803fb352ced7ff919a8b.rev
 
 ./.git/refs:
 heads
@@ -122,10 +127,21 @@ latex
 
 ./tex/latex:
 .DS_Store
+Bios
 coffeestains
 local
 miscImages
 sagetex
+templates4kdp
+
+./tex/latex/Bios:
+author_bios.aux
+author_bios.log
+author_bios.pdf
+author_bios.synctex.gz
+author_bios.tex
+bio.txt
+new-bio.txt
 
 ./tex/latex/coffeestains:
 .DS_Store
@@ -144,10 +160,20 @@ datetime-fallback.log
 datetime-fallback.sty
 
 ./tex/latex/miscImages:
+.DS_Store
+Monet portrait.png
+Renbrandt.png
+Smile.png
+alpha.pnm
 cPhilHuffman.jpg
 gPhilHuffman.jpg
+grin.png
+hPhilHuffman.jpg
 prh-logo.png
 prh-logo.svg
+tieless.png
+tmp.bmp
+van Gogh portrait.png
 
 ./tex/latex/sagetex:
 CONTRIBUTORS
@@ -158,3 +184,7 @@ sagetex.dtx
 sagetex.ins
 sagetex.sty
 scripts.dtx
+
+./tex/latex/templates4kdp:
+kdp.css
+kdp.docx
